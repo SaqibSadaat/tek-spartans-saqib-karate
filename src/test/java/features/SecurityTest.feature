@@ -1,3 +1,4 @@
+@Regression
 Feature: API testing for Security Functions
 
   Background:
@@ -31,11 +32,11 @@ Feature: API testing for Security Functions
       }
       """
     When method post
+    Then print response
     Then status <statusCode>
     Then assert response.errorMessage == "<error>"
-    Examples:
-      | username      | password       | statusCode |error|
-      | wrongUserName | tek_supervisor | 404        ||
-      | supervisor    | wrong password | 400        ||
 
-  
+    Examples:
+      | username      | password       | statusCode | error                        |
+      | wrongUsername | tek_supervisor | 404        | User wrongUsername not found |
+      | supervisor    | wrong password | 400        | Password not matched         |
