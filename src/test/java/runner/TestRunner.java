@@ -6,8 +6,9 @@ public class TestRunner {
 
     @Karate.Test
     Karate runTest() {
-        return Karate.run("classpath:features")
-                .karateEnv("qa") // --> is using from karate-config.js
-                .tags("@PlanCode_1"); //--> for one test case and if you want to run the whole feature file just remote this line and close the above one
+        return Karate
+                .run("classpath:features")
+                .karateEnv("dev") // --> is using from karate-config.js
+                .tags("@End2EndAccount"); //--> for one test case and if you want to run the whole feature file just remote this line and close the above one
     }
 }
