@@ -8,7 +8,8 @@
     Scenario: Create new account
       Given url BASE_URL
       Given path "/api/accounts/add-primary-account"
-      * def email = * def email = dataGenerator.getEmail()
+      * def email = def email = dataGenerator.getEmail()
+#      * def email = "mohammad_instructor2517@tekschool.us"    --> use without randomEmail
       Given request
         """
         {
