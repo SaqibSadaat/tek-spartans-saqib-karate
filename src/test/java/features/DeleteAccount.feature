@@ -2,7 +2,7 @@
 Feature: Delete Account Testing
 
   @DeleteAccount
-  Scenario: delete account with diferent users
+  Scenario: delete account with different users
     Given url BASE_URL
     * def createAccount = callonce read('CreateAccountWithRandomEmail.feature')
     * def newAccountId = createAccount.response.id
